@@ -26,6 +26,14 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-8 col-md-9">
+                                Logout:
+                            </div>
+                            <div class="col-xs-4 col-md-3">
+                                <a href="logout.php" class="btn btn-primary">Logout</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-8 col-md-9">
 
                             </div>
                             <div class="col-xs-4 col-md-3">
