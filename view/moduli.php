@@ -28,9 +28,9 @@ while ($row = mysql_fetch_assoc($result)) {
                       <h3 class="card-title">'.$row['nome'].'</h3>
                         <p class="card-text">'.$row['descrizione'].'</p>';
                         if(file_exists('../moduli/'.$row['nomefile'])){
-                             echo '<center><a class="btn btn-primary" id="'.$row['nome'].'" onclick="loadInstalla(this.id)">Disinstalla</a></center>';
+                             echo '<center><a class="btn btn-primary" id="'.$row['nomefile'].'" onclick="loadDisinstalla(this.id)">Disinstalla</a></center>';
                         } else {
-                            echo '<center><a class="btn btn-primary" id="'.$row['nome'].'" onclick="loadInstalla(this.id)">Installa</a></center>';
+                            echo '<center><a class="btn btn-primary" id="'.$row['nomefile'].'" onclick="loadInstalla(this.id)">Installa</a></center>';
                         }
                      echo '</div>
                     </div>';
@@ -38,8 +38,7 @@ while ($row = mysql_fetch_assoc($result)) {
         }
     }
     echo '</div>';
-    
-}
+    }
 } else {
 echo "CREDENZIALI ERRATE";
 }

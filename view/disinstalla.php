@@ -4,12 +4,12 @@ $path = '/var/www/html/sm';
 
  if (!empty($_GET['app'])){
      echo '<div class="card card-block card-dark bg-inverse">
-        <p class="card-text">Installazione...</p>
+        <p class="card-text">Disinstallazione...</p>
         <h3 class="card-title">'.$_GET['app'].'</h3>
     </div><div id="tmp"></div>';
      echo '<script>
      $(document).ready(function() {
-            $("#tmp").load("view/installa.php?modulo='.$_GET['app'].'")
+            $("#tmp").load("view/disinstalla.php?modulo='.$_GET['app'].'")
         });</script>';
  } elseif (!empty($_GET['modulo'])){
      
@@ -26,7 +26,7 @@ $path = '/var/www/html/sm';
             } else {
                 // allright, we're in!
                 // execute a command
-                if (!($stream = ssh2_exec($con, "wget https://raw.githubusercontent.com/blankfragment/sm/master/serverModuli/".$_GET['modulo']." -P ".$path."/moduli" ))) {
+                if (!($stream = ssh2_exec($con, "rm ".$path."/moduli/".$_GET['modulo']))) {
                     echo "fail: unable to execute command\n";
                 } else {
                 // collect returning data from command
@@ -45,12 +45,12 @@ $path = '/var/www/html/sm';
      
      echo '<script>
         $(document).ready(function() {
-            $("#notifica1").load("view/installa.php?stato=completato")
+            $("#notifica1").load("view/disinstalla.php?stato=completato")
         });
     </script>';
  } elseif (!empty($_GET['stato'])){
      echo '<div class="card card-block card-dark bg-inverse">
-        <p class="card-text">Installazione...</p>
+        <p class="card-text">Disinstallazione...</p>
         <h3 class="card-title">COMPLETATA</h3>
         </div>';
  } else {

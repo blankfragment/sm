@@ -30,8 +30,13 @@
         function loadModal(id) {
             $('#mainModal').load('moduli/' + id)
         }
+
         function loadInstalla(id) {
             $('#notifica1').load('view/installa.php?app=' + id)
+        }
+
+        function loadDisinstalla(id) {
+            $('#notifica1').load('view/disinstalla.php?app=' + id)
         }
     </script>
 
@@ -39,8 +44,8 @@
     <div class="collapse" id="exCollapsingNavbar">
         <div class="bg-inverse p-a-1">
             <div class="row">
-                <div class="col-xs-6 col-md-2" id="notifica1">
-                    
+                <div class="col-xs-12 col-md-2" id="notifica1">
+
                 </div>
             </div>
         </div>

@@ -28,10 +28,9 @@ db = MySQLdb.connect(host="localhost",    # your host, usually localhost
                      db="servermanager")        # name of the data base
 cur = db.cursor()
 cur.execute("CREATE TABLE IF NOT EXISTS dati (ID INT NOT NULL AUTO_INCREMENT, date DATE, time TIME, cpu DECIMAL(4,1), mem DECIMAL(4,1), temp DECIMAL(4,1), pres DECIMAL(5,1), humi DECIMAL(4,1), PRIMARY KEY (ID))COLLATE='latin1_swedish_ci' ENGINE=InnoDB;")
-cur.execute("CREATE TABLE IF NOT EXISTS moduli (ID INT NOT NULL AUTO_INCREMENT, nome VARCHAR(20), nomefile VARCHAR(20), descrizione VARCHAR(500), link VARCHAR(100), img VARCHAR(100), categoria VARCHAR(100), PRIMARY KEY (ID))COLLATE='latin1_swedish_ci' ENGINE=InnoDB;")
-cur.execute("""INSERT INTO moduli (nome, nomefile, descrizione, link, img, categoria) VALUES (%s, %s, %s, %s, %s, %s);""",("apache","apache.php","descrizione","www.google.it","apache.png", "web"))
-cur.execute("""INSERT INTO moduli (nome, nomefile, descrizione, link, img, categoria) VALUES (%s, %s, %s, %s, %s, %s);""",("apache","apache.php","descrizione","www.google.it","apache.png", "web"))
-cur.execute("""INSERT INTO moduli (nome, nomefile, descrizione, link, img, categoria) VALUES (%s, %s, %s, %s, %s, %s);""",("mysql","mysql.php","descrizione","www.google.it","mysql.png", "database"))
+cur.execute("CREATE TABLE IF NOT EXISTS moduli (ID INT NOT NULL AUTO_INCREMENT, nome VARCHAR(20), nomefile VARCHAR(20), descrizione VARCHAR(500), img VARCHAR(100), categoria VARCHAR(100), PRIMARY KEY (ID))COLLATE='latin1_swedish_ci' ENGINE=InnoDB;")
+cur.execute("""INSERT INTO moduli (nome, nomefile, descrizione, img, categoria) VALUES (%s, %s, %s, %s, %s);""",("apache","apache.php","descrizione","apache.png", "web"))
+cur.execute("""INSERT INTO moduli (nome, nomefile, descrizione, img, categoria) VALUES (%s, %s, %s, %s, %s);""",("mysql","mysql.php","descrizione","mysql.png", "database"))
 
 
 #HAT
