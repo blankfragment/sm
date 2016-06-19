@@ -51,7 +51,7 @@ if(isset($_SESSION['user'])){
 
     <head>
         <!-- Required meta tags always come first -->
-        <title>Bootstrap 101 Template</title>
+        <title>Server Manager</title>
         <meta charset="utf-8">
         <!-- Bootstrap -->
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

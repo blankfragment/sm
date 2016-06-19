@@ -1,4 +1,4 @@
-<body ng-controller="mainController" style="overflow-x:hidden; background-color: #1F1F1F;">
+<body ng-controller="mainController" style="overfzlow-x:hidden; background-color: #1F1F1F;">
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -9,11 +9,20 @@
             $("#myModal").draggable();
             $("#myModal2").draggable();
             $("#mModal").draggable();
+            $("#editModal").draggable();
         });
         $(document).ready(function() {
             loadHome();
             loadInstalla("");
+            loadFileManager("/")
         });
+
+        function loadFileManager(id) {
+            $('#fileManager').load('fileManager.php?path=' + id)
+        }
+        function loadEdit(id) {
+            $('#modalEdit').load('view/edit.php?path=' + id)
+        }
 
         function loadHome() {
             $('#main').load('view/home.php')
@@ -37,6 +46,11 @@
 
         function loadDisinstalla(id) {
             $('#notifica1').load('view/disinstalla.php?app=' + id)
+        }
+        function editSalva(testo, path) {
+            testo.replace(/ /g, "space");
+            $('#modalEdit').load('view/edit.php?path=' + path + '&testo=' + testo)
+            //window.alert('view/edit.php?path=' + path + '$testo=' + testo);
         }
     </script>
 
@@ -144,61 +158,72 @@
         </div>
     </div>
 
-    <?php
-    $files = scandir('../moduli');
-    foreach($files as $file) {
-        if(($file != ".") && ($file != "..")){
-            include 'moduli/'.$file;
-        }
-    }
-    ?>
 
 
-        <div id="myModal" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Settings</h4>
 
-                    </div>
-                    <div class="modal-body">
-                        <p>Settings</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content" id="fileManager" style="overfzlow-y:hidden;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">FILE MANAGER</h4>
+                </div>
+                <div class="modal-body">
+                    loading
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div id="myModal2" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Setting2s</h4>
+    <div id="myModal2" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Setting2s</h4>
 
-                    </div>
-                    <div class="modal-body">
-                        <p>Settings</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
+                </div>
+                <div class="modal-body">
+                    <p>Settings</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div id="mModal" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content" id="mainModal">
+    <div id="editModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content" id="modalEdit">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">EditModal</h4>
 
+                </div>
+                <div class="modal-body">
+                    <p>Settings</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div id="mModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content" id="mainModal">
+
+            </div>
+        </div>
+    </div>
 
 
 
