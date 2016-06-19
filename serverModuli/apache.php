@@ -137,10 +137,10 @@
                                 &nbsp;&nbsp;SOFTWARE
                             </div>
                             <div class="col-xs-6 col-md-4">
-                                <center><a class="btn btn-primary" id="apache.php?azione=installa" onClick="loadModal(this.id)">INSTALLA</a></center>
+                                <center><a class="btn btn-primary" style="width: 100%;" id="apache.php?azione=installa" onClick="loadModal(this.id)">INSTALLA</a></center>
                             </div>
                             <div class="col-xs-6 col-md-4">
-                                <center><a class="btn btn-primary" id="apache.php?azione=disinstalla" onClick="loadModal(this.id)">DISINSTALLA</a></center>
+                                <center><a class="btn btn-primary" style="width: 100%;" id="apache.php?azione=disinstalla" onClick="loadModal(this.id)">DISINSTALLA</a></center>
                             </div>
                         </div>
                     </div>
@@ -152,13 +152,53 @@
                     <div class="card-text">
                         <div class="row">
                             <div class="col-xs-4 col-md-4">
-                                <center><a class="btn btn-primary" id="apache.php?azione=start" onClick="loadModal(this.id)">START</a></center>
+                                <center><a class="btn btn-primary" style="width: 100%;" id="apache.php?azione=start" onClick="loadModal(this.id)">START</a></center>
                             </div>
                             <div class="col-xs-4 col-md-4">
-                                <center><a class="btn btn-primary" id="apache.php?azione=stop" onClick="loadModal(this.id)">STOP</a></center>
+                                <center><a class="btn btn-primary" style="width: 100%;" id="apache.php?azione=stop" onClick="loadModal(this.id)">STOP</a></center>
                             </div>
                             <div class="col-xs-4 col-md-4">
-                                <center><a class="btn btn-primary" id="apache.php?azione=restart" onClick="loadModal(this.id)">RESTART</a></center>
+                                <center><a class="btn btn-primary" style="width: 100%;" id="apache.php?azione=restart" onClick="loadModal(this.id)">RESTART</a></center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <div class="card card-block">
+                    <h3 class="card-title">SETTINGS</h3>
+                    <div class="card-text">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-4">
+                                &nbsp;&nbsp;GENERALE
+                            </div>
+                            <div class="col-xs-6 col-md-4">
+                                <center><a class="btn btn-primary" style="width: 100%;" id="/etc/apache2/apache2.conf" onClick="loadEdit(this.id)" href="#editModal" data-backdrop="false" data-toggle="modal" data-dismiss="modal">Apache2.conf</a></center>
+                            </div>
+                            <div class="col-xs-6 col-md-4">
+                                <center><a class="btn btn-primary" style="width: 100%;" id="/etc/apache2/ports.conf" onClick="loadEdit(this.id)" href="#editModal" data-backdrop="false" data-toggle="modal" data-dismiss="modal">ports.conf</a></center>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-4">
+                                &nbsp;&nbsp;CONF-AVAILABLE
+                            </div>
+                            <div class="col-xs-6 col-md-4">
+                                <center><a class="btn btn-primary" style="width: 100%;" id="/etc/apache2/conf-available/charset.conf" onClick="loadEdit(this.id)" href="#editModal" data-backdrop="false" data-toggle="modal" data-dismiss="modal">charset.conf</a></center>
+                            </div>
+                            <div class="col-xs-6 col-md-4">
+                                <center><a class="btn btn-primary" style="width: 100%;" id="/etc/apache2/conf-available/security.conf" onClick="loadEdit(this.id)" href="#editModal" data-backdrop="false" data-toggle="modal" data-dismiss="modal">security.conf</a></center>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-4">
+                                &nbsp;&nbsp;SITES-AVAILABLE
+                            </div>
+                            <div class="col-xs-6 col-md-4">
+                                <center><a class="btn btn-primary" style="width: 100%;" id="/etc/apache2/sites-available/default-ssl.conf" onClick="loadEdit(this.id)" href="#editModal" data-backdrop="false" data-toggle="modal" data-dismiss="modal">default-ssl.conf</a></center>
+                            </div>
+                            <div class="col-xs-6 col-md-4">
+                                <center><a class="btn btn-primary" style="width: 100%;" id="/etc/apache2/sites-available/000-default.conf" onClick="loadEdit(this.id)" href="#editModal" data-backdrop="false" data-toggle="modal" data-dismiss="modal">000-default.conf</a></center>
                             </div>
                         </div>
                     </div>
