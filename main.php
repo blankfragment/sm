@@ -67,7 +67,7 @@
 
 
     <nav class="navbar navbar-dark bg-inverse">
-        <a class="navbar-brand" href="#">Project name</a>
+        <a class="navbar-brand" href="#">Server Manager</a>
         <ul class="nav navbar-nav nav-pills pull-xs-right">
             <li class="nav-item active">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">&#9776;</button>
